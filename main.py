@@ -82,13 +82,13 @@ def isomorphic(vec1 : list, vec2 : list, isPercent : bool, bias : float):   # п
                 temp.append(el)
         array.append(getComboList(temp, second[name]))
 
-    cp = []
-    try:    # все комбинации сравнения
-        cp = list(itertools.product(*array))  
-    except:
-        pass
+#    cp = []
+#    try:    # все комбинации сравнения
+#        cp = list(itertools.product(*array))  
+#    except:
+#        pass
 
-    for struct in cp:
+    for struct in itertools.product(*array):
         sortStruct = list(itertools.chain.from_iterable(struct))
         correct = True
         i = 0
